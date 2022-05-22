@@ -4,7 +4,7 @@
 #
 #Osint a IPs con API.
 #
-#MadeByShadowVMX
+#MadebyShadowVMX
 
 echo " " 
 echo $(tput setaf 6);figlet IpSint
@@ -20,6 +20,7 @@ if [[ -z $1 ]] ; then
 	echo "" 
 	echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]$(tput setaf 3)¿Cómo conseguir $(tput setaf 231)API-KEY? $(tput setaf 1)--> $(tput setaf 6)https://ipgeolocation.io/signup.html"
 	echo " "
+	exit
 fi
 
 
@@ -27,4 +28,8 @@ if [[ $1 == "--ip" ]] && [[ $3 == "--api" ]] ; then
 	echo "$(tput setaf 231)"
 	curl -s "https://api.ipgeolocation.io/ipgeo?apiKey=$4&ip=$2" | tr ',' '\n' | tr '"' ' ' | cut -d " " -f2,3,4,5,6,7,8
 	echo "" 
+else
+	echo " "
+	echo "$(tput setaf 6)[$(tput setaf 1)-$(tput setaf 6)][Parámetros incorrectos]"
+	echo " "
 fi
