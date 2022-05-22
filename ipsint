@@ -4,7 +4,7 @@
 #
 #Osint a IPs con API.
 #
-#
+#MadeByShadowVMX
 
 echo " " 
 echo $(tput setaf 6);figlet IpSint
